@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>page2</title>
+		<style>
+			.one{
+				white-space: nowrap;
+				width: 10px;
+			}
+		</style>
+		<script src="jquery-3.5.1.min.js"></script>
+		<script>
+			var x = Math.floor(Math.random()*100);
+			var y = Math.floor(Math.random()*100);
+			var result = x + y;
+			$(document).ready(function()
+			{
+				$("#puzzle1").text(x+'+'+y+'=');
+				$("#button1").click(function()
+				{
+					var a = $("#input1").val();
+					$("#istrue1").text(a==result);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<p>
+			<span id="puzzle1">x1</span>
+			<input type="text" pattern="([0-9])*(\.)?([0-9])+" id="input1"/>
+			<button id="button1">提交</button>
+			<br />
+			<span id="istrue1"></span>
+		</p>
+	</body>
+</html>
